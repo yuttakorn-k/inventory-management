@@ -22,7 +22,7 @@ const CardExpenseSummary = () => {
   const expenseSums = expenseByCategorySummary.reduce(
     (acc: ExpenseSums, item: ExpenseByCategorySummary) => {
       const category = item.category + " Expenses";
-      const amount = item.amount;
+      const amount = parseInt(item.amount, 10);
       if (!acc[category]) acc[category] = 0;
       acc[category] += amount;
       return acc;
